@@ -171,11 +171,17 @@ public class Cgol
     //assemble the board using the parts already created 
     char[][] newBoard = new char [rows][cols];
 
+    char nextCell = '@';
+
     //traverse
     for (int i = 0; i < rows; i++) {
       for (int j = 0; j < cols; j++) {
         //set the cell to be the next gen's cell
-        setCell(board, i, j, getNextGenCell(board, i, j));
+        nextCell = getNextGenCell(board, i, j);
+        // System.out.print("test " + nextCell);      //OKay, so next cell works
+        // the problem must be in setCell for some reason, okay it's not :')
+        setCell(newBoard, i, j, nextCell);
+        // System.out.print(board[i][j]);
       }
     }
     // get the next gen cell

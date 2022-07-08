@@ -40,8 +40,8 @@ Modify these methods...
 
 ADVANCED
 Write these methods:
-add(index,value) which will add value at location index. You should shift the data to create an open space if you need to and you can use grow() if you need to make the array larger.
-remove(index) - remove the location at index by shifting all the elements after location index and subtracting one from numberElements
+1)add(index,value) which will add value at location index. You should shift the data to create an open space if you need to and you can use grow() if you need to make the array larger.
+2)remove(index) - remove the location at index by shifting all the elements after location index and subtracting one from numberElements
 */
 
 import java.io.*;

@@ -1,10 +1,9 @@
 import java.io.*;
 import java.util.*;
 
-
 /**
  * Time class by Team LucidThinkeren
- * Saranii muller who understands nothing AT ALL 
+ * Saranii mullerL 
  * collaborators: Kirk Martin, Joel Bianchi, Jessica Novillo
 */
 
@@ -35,12 +34,8 @@ import java.util.*;
 */
 
 
-
 public class Time {
     // Instance Variable(s)
-    // You can change this if you want to use the alternate
-    // implementation of just storing the overall seconds.
-    
     int hours;
     int minutes;
     int seconds;
@@ -50,15 +45,12 @@ public class Time {
     	this.hours = 0;
     	this.minutes = 0;
     	this.seconds = 0;
-	
     }
 
     /**
        Parameters:
        - hrs, mins, secs - the time you want to create the class as
-
        Initialize this instance to represent hrs:mins:secs as the time.
-       
      */
     //Constructor #2; takes in 3 different parameters
     public Time(int hrs, int mins, int secs){
@@ -69,18 +61,14 @@ public class Time {
 	
     }
     
-    
-    // Methods
+    //Additional Methods
 
     /**
        returns a string representation of the time
     */
     public String toString(){
-	    return("The time is: " + hours + minutes + seconds);
+	    return("The time is: " + hours + ":" + minutes + ":"+ seconds);
     }
-
-
-    
 
     /**
        Parameters:
@@ -90,11 +78,11 @@ public class Time {
     */
     public void set(int hrs, int mins, int secs){
 	// add the code to add the time represented by other
-	// to this instance.
-
+	// to this instance. - updates (replaces) time rather than creating in t2 in Driver
+      this.hours = hrs;
+      this.minutes = mins;
+      this.seconds = secs;
     }
-
-    
 
     /**
        Parameters:
@@ -106,9 +94,10 @@ public class Time {
     public void add(Time other){
 	// add the code to add the time represented by other
 	// to this instance.
+      //current time plus other 
+      this.hours += 
 
     }
-
 
     /**
        Parameters:

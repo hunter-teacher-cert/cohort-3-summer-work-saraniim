@@ -4,8 +4,8 @@ import java.util.*;
 
 /**
  * Driver class for Time class  by Team LucidThinkeren
- * First Last
- * collaborators: First Last, First Last
+ * Joel Bianchi
+ * collaborators: Saranii, Kirk, Jessica
  */
 
 /**
@@ -33,11 +33,22 @@ public class Driver {
     //declare & assign a specific time
     Time t2 = new Time(11,51,9);
 
+    //first time
+    System.out.println(t2.toString());
+
+    //set updates the time
+    t2.set(12,9,55);
+    System.out.println("New time: ");
+    
+    //second time
+    System.out.println(t2.toString());
     //print out the t1 and t2 times
-    System.out.println(t1);
-    System.out.println(t2);
+    //System.out.println(t1);
+    //System.out.println(t2);
     
-    
+    // Add time
+    Time t3 = new Time(2,30,10);
+    t2.add(t3);
   }//end main()
 
 }//end class

@@ -263,7 +263,7 @@ public class SuperArrayKate
   public void add(int index, int value)
   {
     // see if there's enough room
-   if(index > numberElements || index < 0) { // NOT ALLOWED
+   if(index > numberElements || index < 0) { // NOT ALLOWED -- no gaps allowed!
      System.out.println("Index out of bounds!");
    } else {
 

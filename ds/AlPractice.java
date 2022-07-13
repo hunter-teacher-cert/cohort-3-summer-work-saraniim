@@ -1,6 +1,7 @@
 import java.io.*;
 import java.util.*;
-
+//Team Room 2 7/12
+//Saranii Muller + Taylor Knight, Marieke Thomas and Ben Eckley
 /** Methods to write
 
 Basic level:
@@ -65,9 +66,9 @@ public class AlPractice{
     //create loop to add elements for sum
     //              dataList.size here is a method
     for (int i = 0; i < dataList.size(); i++) {
-      
+      sum = sum + dataList.get(i);//looping through ArrayList to add up each index
     }
-    return 0;//placeholder to compile. Would this be returning sum?
+    return sum;// To return our sum
   }
 
   /**
@@ -83,7 +84,9 @@ public class AlPractice{
   - No other values should be modified.
   */
   public static void swapElements(ArrayList<Integer> dataList, int index1,int index2){
-
+    // Think about how to prevent overwriting needed information
+    // This is solved by making a dummy "temp" variable
+    // Typically: int temp = ____ ; to start
   }
 
   /**
@@ -139,6 +142,10 @@ public class AlPractice{
     al = buildRandomList(10,100);
     System.out.println(al);
 
+        //testing sum
+    System.out.println(sumOfList(al));
+    
+    
     //Uncomment these to test swapElements
     //swapElements(al,2,6); // NOTE: had to include al
     //System.out.println(al);

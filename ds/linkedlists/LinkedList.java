@@ -1,13 +1,14 @@
 import java.io.*;
 import java.util.*;
 
+//Saranii + Taylor, Ben, Marieke
 /**
 For all attempted methods, make sensible decisions for error and
 edge cases (such as indexing out of bounds).
 
 Basic
 -----
-add(string value)
+✔️add(string value)
 get(int index);
 toString()
 
@@ -53,13 +54,19 @@ public class LinkedList{
   Returns the String in the node at location index.
   */
   public String get(int index){
-    return "";
+   
+      return "";
+    
   }
 
   /**
   Return a string representation of the list
   */
   public String toString(){
+     while(index != null){
+      System.out.println(index.getData());
+          index = index.getNext();
+    }
     return "";
   }
 

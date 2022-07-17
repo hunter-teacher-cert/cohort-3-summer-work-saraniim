@@ -19,9 +19,9 @@ import java.util.*;
    Place this file in a folder named programming/5/Time.java
 
    Basic level (complete all):
-   - public Time(int hrs, int mins, int secs) - constructor
-   - public void toString()
-   - public void set(int hrs, int mins, int secs)
+   - ✔️ public Time(int hrs, int mins, int secs) - constructor
+   - ✔️public void toString()
+   - ✔️public void set(int hrs, int mins, int secs)
 
    Intermediate level (complete Basic methods plus this method):
    - public void add(Time other)
@@ -95,9 +95,9 @@ public class Time {
 	// add the code to add the time represented by other
 	// to this instance.
       //current time plus other 
-      this.hours += 
-
-    }
+      //this.hours += 
+        }
+    
 
     /**
        Parameters:
@@ -129,10 +129,11 @@ public class Time {
     */
     public int compareTo(Time other){
 	// your code here)
+      
 
 	return 0; // change this
     }
     
 
-    
-}//end class
+  }     
+//end class

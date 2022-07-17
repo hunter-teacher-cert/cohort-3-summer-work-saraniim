@@ -28,7 +28,7 @@ public class Fence
     if (n==1){
       return "|";
     }
-
+  return fence;
     //RECURSIVE CASE: add on a post-dash-dash
 
     

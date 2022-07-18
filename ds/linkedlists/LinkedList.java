@@ -9,13 +9,13 @@ edge cases (such as indexing out of bounds).
 Basic
 -----
 ✔️add(string value)
-get(int index);
-toString()
+✔️get(int index);
+✔️toString()
 
 
 Intermediate (at least add, size + one of the other two)
 ------------
-size()
+✔️size()
 add(int index,String value)
 indexOf(String value);
 toArray()
@@ -38,13 +38,13 @@ public class LinkedList{
   Parameters:
   value - the new string to add to the list
 
-  Adds a new node containing value to the front of the list.
+  Adds a new node containing value to ONLY the front of the list.
   */
   public void add(String value){ //val
     Node front;//declares variable called front
     front = new Node(value);//create and fill box
     front.setNext(head); //makes front first node fka head
-    front = head;
+    head = front;
 
     // You can do the above in one line of code:
     // head = new Node(value, head);
@@ -52,10 +52,15 @@ public class LinkedList{
 
   /**
   Returns the String in the node at location index.
+
   */
   public String get(int index){
-   
-      return "";
+    Node walker = head;
+    
+    for (int i = 0; i < index ; i++){
+      walker = walker.getNext();
+    }
+    return walker.getData();//returns the data in that position of walker
     
   }
 
@@ -63,18 +68,38 @@ public class LinkedList{
   Return a string representation of the list
   */
   public String toString(){
-     while(index != null){
-      System.out.println(index.getData());
-          index = index.getNext();
+    // Create a walker Node here that points to head
+
+    /* FROM NODE CLASS
+    public String toString(){
+      return "" + data + "->";
     }
-    return "";
+    */
+    //walker is a node but has T=toString built in THUS line79 possible temp+=walker
+    Node walker = head;
+    // Need a String variable to store the output to return
+    String temp = "";
+    while(walker != null){
+      // Instead of printing, concatenate on walker to output string
+      temp += walker;
+      walker = walker.getNext();//walks it along
+    }
+    //Need to return the completed string output - which is temp because of temp += walker
+    return temp;
   }
 
   /**
   returns the number of elements in the list
   */
-  public int size(){
-    return 0;
+  public int size(){//creates size method
+    Node walker = head;//sets node of walker to head
+    int counter = 0; //starts at node 0
+    
+    while(walker != null){ //while loop as long as walker is not null
+      walker = walker.getNext(); //set walker to the next node
+      counter++; //increase node position by 1
+    }
+    return counter; //return number nodes counted
   }
 
 
@@ -94,8 +119,17 @@ public class LinkedList{
   "a"-> "z" -> "b" -> "c" -> "d"
 
   */
-  public void add(int index, String value){
+  //l.add(“something”) <automatically goes to the beginning based on first add method
+  //ladd(3,"something”) <-- inserts into that #
 
+  public void add(int index, String value){ //
+    if (index == 0) {
+      add(value);
+      
+    }
+  else {
+    
+  }
   }
 
 

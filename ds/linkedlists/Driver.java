@@ -11,6 +11,8 @@ public class Driver{
 
     System.out.println(l.get(1));//test for get
 
-    System.out.println(l.size());
+    System.out.println(l.size());//tst size
+    l.add(3, "Z");
+    System.out.println(l);
   }
 }

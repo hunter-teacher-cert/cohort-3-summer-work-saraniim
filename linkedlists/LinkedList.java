@@ -135,8 +135,8 @@ public class LinkedList{
     
     for (int i = 0; i < index-1; i++){
       walker = walker.getNext();//traverses nodes
-      
-      {zed.setNext(walker.getNext());//point to b
+    }
+      zed.setNext(walker.getNext());//point to b
       walker.setNext(zed);//need walker to point ?
       //ben do you want to test this? 
        //trying to figure out print statement to do
@@ -144,7 +144,7 @@ public class LinkedList{
          
          
   
-    }
+    
   }
 //add(3,"chicken")//insert between c and d
   //point to d

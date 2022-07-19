@@ -125,31 +125,25 @@ public class LinkedList{
   public void add(int index, String value){ //
     if (index == 0) {
       add(value);
-      
     }
     else {
     //for loop to walk to the correct place in order to insert the new value
     Node walker = head;
     Node zed = new Node(value);
-    
-    
+        
     for (int i = 0; i < index-1; i++){
       walker = walker.getNext();//traverses nodes
     }
       zed.setNext(walker.getNext());//point to b
       walker.setNext(zed);//need walker to point ?
-      //ben do you want to test this? 
-       //trying to figure out print statement to do
-           
-         
-         
-  
-    
+      
+    }
   }
-//add(3,"chicken")//insert between c and d
+/*//add(3,"chicken")//insert between c and d
   //point to d
   //point c to chicken
-  /**
+*/  
+/**
   Returns the index (location) of the first node in the list
   that contains value.
 
@@ -159,8 +153,8 @@ public class LinkedList{
   indexOf("d") would return 3 since "d" is at location 3.
 
   */
-  //public int indexOf(String value){
-    //return 0;
+  public int indexOf(String value){
+    return 0;
   }
 
 
@@ -172,8 +166,8 @@ public class LinkedList{
   the array.
 
   */
-  //public String[] toArray(){
-    //return null;
+  public String[] toArray(){
+    return null;
   }
 
 

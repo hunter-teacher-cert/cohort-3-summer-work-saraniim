@@ -9,23 +9,23 @@ import java.util.*;
 Sort Project:
 
 Part 1:  (BASIC)
-  1. Analyze the two constructors - try to figure out how they work.
-  2. Compile and run the program (SortProjectDriver.java and SortProject.java) and confirm
+✔️  1. Analyze the two constructors - try to figure out how they work.
+✔️ 2. Compile and run the program (SortProjectDriver.java and SortProject.java) and confirm
   the behavior of the constructors.
 
   Part 2: (BASIC)
-  1. Read the description of findSmallestIndex and complete the method.
-  2. Uncomment the lines in SortProjectDriver to test.
+✔️ 1. Read the description of findSmallestIndex and complete the method.
+✔️2. Uncomment the lines in SortProjectDriver to test.
 
   Part 3: (INTERMEDIATE)
-  1. Complete the sort method - read comments for description
-  2. Uncomment the lines in sortProjectDriver to test.
+✔️  1. Complete the sort method - read comments for description
+✔️  2. Uncomment the lines in sortProjectDriver to test.
 
 
 
 Search Project:
   1. Complete the linear search (BASIC)
-  2. Complete the binary search (Intermediate)
+  2. Complete the binary search (Intermediate)//can't binary search on a non sorted list
   3. Complete the recursive version of binary search (Advanced)
 */
 
@@ -64,44 +64,44 @@ public class SortSearch{
     
 
     /*
-      return the index of the smallest data idem from index start to the end
-      of the ArrayList. If there are multiple of the smallest value,
-      return any of them.
+      return the index of the smallest data item from index start to the end of the ArrayList. If there are multiple of the smallest value, return any of them.
       
       Example, if the arraylist has:
       5,3,10,6,8
-      if start was 2 (start at index 2, value 10) then it would return 3
-      which is the index of the value 6 which is the index with the
-      smallest value from start to end
 
-      On the otherh and, if start was 0, then the method would
-      return 1 since the value 3 is in index 1 and that is the smallest.
+      if start was 2 (start at index 2, value 10) then it would return 3 which is the index of the value 6 which is the index with the smallest value from start to end
+
+      On the other hand, if start was 0, then the method would return 1 since the value 3 is in index 1 and that is the smallest.
       
     */
-    public int findSmallestIndex(int start){
-	int smallIndex = start;
-	
+  public int findSmallestIndex(int start){//created method called findSmallestIndex w/parameter of start
+  	int smallIndex = start; //smallIndex is start
+  	for(int i=start; i <data.size(); i++){//loop starting at start parameter, increments up until start is less then the size of array
+      if(data.get(i) < data.get(smallIndex)){//if the data at the index we are checking is less than the data at our current smallest index then we replace the smallIndex with that index
+        smallIndex = i;
+      }
+    }
 	return smallIndex;
     }
 
 
     /**
-       Implement the selection sort algorithm by sorting the ArrayList
-       data in place.
-
+       Implement the selection sort algorithm by sorting the ArrayList data in place.
        Algorithm:
-       Loop a variable that represents the ArrayList index from
-       0 to the end of the ArrayList.
-         For each index, find the smallest from that Location
-	 to the end of the array and swap it with that index.
-
-	 
-       
-
+       Loop a variable that represents the ArrayList index from 0 to the end of the ArrayList.
+         For each index, find the smallest from that Location to the end of the array and swap it with that index.
     */
     public void sort(){
-
-
+      //some if loop and then if true we would shift start up one -- replace value from lowest index with current test index (will need temp placeholder variable??)
+      //oh I thought that was what I was calling sethsVal but nevermind. HMM. Im just thinking through this.
+      int smallIndex = 0;
+      int tempInt = 0;
+      for(int i = 0/*this is the start*/;i < data.size();i++){ //this is like the j loop and start always moves up with the loop
+        smallIndex = findSmallestIndex(i); //find smallest index starting at 0
+        tempInt = data.get(smallIndex); //temporary variable to hold the smallest int index while looping through
+        data.set(smallIndex, data.get(i)); //set index to looped data from start point
+        data.set(i, tempInt); //that data now becomes the temp
+      }
     }
 
 

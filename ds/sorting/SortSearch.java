@@ -96,7 +96,7 @@ public class SortSearch{
       //oh I thought that was what I was calling sethsVal but nevermind. HMM. Im just thinking through this.
       int smallIndex = 0;
       int tempInt = 0;
-      for(int i = 0/*this is the start*/;i < data.size();i++){ //this is like the j loop and start always moves up with the loop
+      for(int i = 0/*this is the start*/;i < data.size()-1;i++){ //this is like the j loop and start always moves up with the loop
         smallIndex = findSmallestIndex(i); //find smallest index starting at 0
         tempInt = data.get(smallIndex); //temporary variable to hold the smallest int index while looping through
         data.set(smallIndex, data.get(i)); //set index to looped data from start point
@@ -105,7 +105,9 @@ public class SortSearch{
     }
 
 
-
+  /** 
+    Searching projects Saranii + Kirk + Stacy + Parmanand **/
+   
     /* Search project starts here */
     
     /**
@@ -119,10 +121,15 @@ public class SortSearch{
 
     */
     public int linearSearch(int value){
-	
-	
-	return 0; // replace this return
+      for (int i = 0; i < data.size() - 1; i++){
+        if(data.get(i) == value) {
+          return i;
+        } 
+      }
+      return -1;
     }
+	
+	
     
     /**
        Implement a binary search as specified by the comments
@@ -136,9 +143,34 @@ public class SortSearch{
 	//   if the item is at data.get(middle), return middle
 	//   otherwise, update high, low, and middle
 
-	return 0;
-	    
+    /*
+  - step 1: Assume list is sorted
+  - step 2: set low, set high. find mid
+  - step 3: if # is more than mid, set middle +1 to low and find new mid like in 2 rinse repeat until middle low and high ar eall the same
+
+sorting method called sort
+*/
+  int low = 0; //setting low index to be 0
+  int high = data.size() - 1;    //setting high to highest index of arraylist
+  while (low != high) { //creates loop until
+    int mid = (high + low)/2; //sets mid continually
+    if(data.get(mid) == value) //if the value we are looking for is the mid then return the mid - setting truth first
+    {
+      return mid;
     }
+    else if (data.get(mid) < value) { //if the mid is less than the value, change the low to one above the current mid
+      low = mid + 1;
+    }
+    else {
+      high = mid - 1; // for when value is less then mid, get rid of the high
+    }
+  } //exit loop
+  if(data.get(high) == value) { //if high == value then the value exists in the array
+    return high; //return the index of the value
+  }
+  return -1; //value does not exist in the array thus -1
+	    
+  }
     
     /**
        Implement a RECURSIVE binary search as specified by the comments
